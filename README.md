@@ -1,6 +1,6 @@
 # OpenSSL 
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg?style=flat-square)](https://php.net/)
-
+![PHP from Packagist](https://img.shields.io/packagist/php-v/symflex/openssl-component)
+![Packagist Version](https://img.shields.io/packagist/v/symflex/openssl-component)
 ## Installation
 
 Package is available on [Packagist](https://packagist.org/packages/symflex/openssl-component),
