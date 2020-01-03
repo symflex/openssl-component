@@ -1,7 +1,7 @@
 # OpenSSL 
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg?style=flat-square)](https://php.net/)
 
-##Installation
+## Installation
 
 Package is available on [Packagist](https://packagist.org/packages/symflex/openssl-component),
 you can install it using [Composer](https://getcomposer.org).
@@ -10,12 +10,12 @@ you can install it using [Composer](https://getcomposer.org).
 composer require symflex/openssl-component
 ```
 
-##Dependencies
+## Dependencies
 
 - PHP 7.4
 - OpenSSL Extension
 
-##Usage
+## Usage
 
 ```php
 use Symflex\Component\OpenSSL\Key\PemPublicKey;
