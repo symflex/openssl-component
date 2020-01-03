@@ -1,5 +1,6 @@
 # OpenSSL 
 ![PHP from Packagist](https://img.shields.io/packagist/php-v/symflex/openssl-component)
+![Codecov](https://img.shields.io/codecov/c/gh/symflex/openssl-component)
 ![Packagist Version](https://img.shields.io/packagist/v/symflex/openssl-component)
 ## Installation
 
