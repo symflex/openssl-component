@@ -27,7 +27,7 @@ $publicKey  = new PemPublicKey('file:///path_to_file');
 $privateKey = new PemPrivateKey('file:///path_to_file', 'passphrase');
 ```
 
-OR
+or
 
 ```php
 use Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory;
@@ -36,4 +36,16 @@ use Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory;
 $keyFactory = new \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory();
 $publicKey  = $keyFactory->createPublicKey('file:///path_to_file');
 $privateKey = $keyFactory->createPrivateKey('file:///path_to_file', 'passphrase');
+```
+
+```php
+use Symflex\Component\OpenSSL\Signature\Algorithm\Rsa\Sha256;
+
+$data = 'test string';
+
+$opensslSigner = new Sha256($publicKey, $privateKey);
+$signature = $opensslSigner->sign($data);
+
+$opensslSigner->verify($data, $signature);
+
 ```
