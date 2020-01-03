@@ -16,13 +16,13 @@ class PemPublicKeyTest extends TestCase
 
     /**
      * @test
-     * @covers
+     * @covers \Symflex\Component\OpenSSL\Key\PemPublicKey
      */
     public function keyFromStringTest()
     {
-        $keyFromPath = new PemPublicKey($this->publicKeyPath);
         $keyFromString = new PemPublicKey($this->publicKeyString);
-        $this->assertEquals($this->publicKeyString, $keyFromPath->content());
         $this->assertEquals($this->publicKeyString, $keyFromString->content());
     }
+
+
 }

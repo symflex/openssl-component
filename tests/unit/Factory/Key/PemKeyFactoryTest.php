@@ -16,7 +16,10 @@ class PemKeyFactoryTest extends TestCase
 
     /**
      * @test
-     * @covers
+     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::createPublicKey
+     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::readFile
+     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::isPath
+     * @covers \Symflex\Component\OpenSSL\Key\PemPublicKey
      */
     public function createPublicKeyTest()
     {
@@ -36,7 +39,9 @@ class PemKeyFactoryTest extends TestCase
 
     /**
      * @test
-     * @covers
+     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::createPrivateKey
+     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::readFile
+     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::isPath
      */
     public function createPrivateKeyTest()
     {
@@ -58,7 +63,9 @@ class PemKeyFactoryTest extends TestCase
 
     /**
      * @test
-     * @covers
+     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::createBundleKey
+     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::readFile
+     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::isPath
      */
     public function createBundleKeyTest()
     {
@@ -85,5 +92,15 @@ class PemKeyFactoryTest extends TestCase
         $this->assertInstanceOf(PemPrivateKey::class, $keyBundleFromString->privateKey());
         $this->assertEquals($this->privateKeyString, $keyBundleFromPath->privateKey()->content());
         $this->assertEquals($this->keyPassphrase, $keyBundleFromPath->privateKey()->passphrase());
+    }
+
+    /**
+     * @test
+     */
+    public function badKeyPathTest()
+    {
+        $keyFactory = new PemKeyFactory();
+        $this->expectException(\RuntimeException::class);
+        $keyFactory->createPublicKey($this->publicKeyPath . 'bad');
     }
 }

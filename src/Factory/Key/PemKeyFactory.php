@@ -62,7 +62,7 @@ class PemKeyFactory implements KeyFactory
      * @param string $data
      * @return bool
      */
-    protected function isPath(string $data)
+    protected function isPath(string $data): bool
     {
         return strpos($data, 'file://') === 0 ?? false;
     }
@@ -70,6 +70,7 @@ class PemKeyFactory implements KeyFactory
     /**
      * @param string $filePath
      * @return string
+     * @throws RuntimeException
      */
     protected function readFile(string $filePath): string
     {
@@ -77,12 +78,7 @@ class PemKeyFactory implements KeyFactory
             $file = new SplFileObject($filePath);
             return $file->fread($file->getSize());
         } catch (Throwable $e) {
-            throw new RuntimeException(
-                sprintf(
-                    'error read key file. %s',
-                    $e->getMessage()
-                )
-            );
+            throw new RuntimeException(sprintf('error read key file. %s', $e->getMessage()));
         }
     }
 }

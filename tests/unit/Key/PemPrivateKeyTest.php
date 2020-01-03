@@ -17,15 +17,11 @@ class PemPrivateKeyTest extends TestCase
 
     /**
      * @test
-     * @covers
+     * @covers \Symflex\Component\OpenSSL\Key\PemPrivateKey
      */
     public function keyFromStringTest()
     {
-        $keyFromPath = new PemPrivateKey($this->privateKeyPath, $this->keyPassphrase);
         $keyFromString = new PemPrivateKey($this->privateKeyString, $this->keyPassphrase);
-
-        $this->assertEquals($this->privateKeyString, $keyFromPath->content());
-        $this->assertEquals($this->keyPassphrase, $keyFromPath->passphrase());
 
         $this->assertEquals($this->privateKeyString, $keyFromString->content());
         $this->assertEquals($this->keyPassphrase, $keyFromString->passphrase());

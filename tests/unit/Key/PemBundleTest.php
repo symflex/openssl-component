@@ -16,7 +16,7 @@ class PemBundleTest extends TestCase
 
     /**
      * @test
-     * @covers
+     * @covers \Symflex\Component\OpenSSL\Key\PemBundleKey
      */
     public function bundleKeyTest()
     {
