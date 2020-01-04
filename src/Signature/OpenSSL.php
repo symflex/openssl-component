@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Symflex\Component\OpenSSL\Signature;
 
@@ -40,13 +41,13 @@ abstract class OpenSSL
      */
     public function __construct(PublicKey $publicKey, PrivateKey $privateKey)
     {
-        $this->privateKey = $publicKey;
+        $this->publicKey = $publicKey;
         $this->privateKey = $privateKey;
     }
 
     protected function createSignature(string $data): string
     {
-        $key = $this->getPrivateKey($this->privateKey->content(), $this->privateKey->passphrase());
+        $key = $this->getPrivateKey($this->privateKey);
 
         try {
             $signature = '';
@@ -64,7 +65,7 @@ abstract class OpenSSL
 
     protected function verifySignature(string $data, string $signature): bool
     {
-        $key = $this->getPublicKey($this->publicKey->content());
+        $key = $this->getPublicKey($this->publicKey);
         $result = openssl_verify($data, $signature, $key, $this->algorithm());
         openssl_free_key($key);
         return $result === self::VERIFY_SUCCESS;

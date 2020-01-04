@@ -28,7 +28,7 @@ abstract class Rsa extends OpenSSL implements Signature
      */
     public function verify(string $data, string $signature): bool
     {
-        return $this->verifySignature($data, $signature):
+        return $this->verifySignature($data, $signature);
     }
 
     /**

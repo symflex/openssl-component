@@ -10,16 +10,18 @@ use Symflex\Component\OpenSSL\PrivateKey;
 use Symflex\Component\OpenSSL\PublicKey;
 use Symflex\Component\OpenSSL\Tests\Unit\KeySetUp;
 
+/**
+ * @coversDefaultClass \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory
+ */
 class PemKeyFactoryTest extends TestCase
 {
     use KeySetUp;
 
     /**
      * @test
-     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::createPublicKey
-     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::readFile
-     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::isPath
-     * @covers \Symflex\Component\OpenSSL\Key\PemPublicKey
+     * @covers ::createPublicKey
+     * @covers ::readFile
+     * @covers ::isPath
      */
     public function createPublicKeyTest()
     {
@@ -39,9 +41,9 @@ class PemKeyFactoryTest extends TestCase
 
     /**
      * @test
-     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::createPrivateKey
-     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::readFile
-     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::isPath
+     * @covers ::createPrivateKey
+     * @covers ::readFile
+     * @covers ::isPath
      */
     public function createPrivateKeyTest()
     {
@@ -63,9 +65,9 @@ class PemKeyFactoryTest extends TestCase
 
     /**
      * @test
-     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::createBundleKey
-     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::readFile
-     * @covers \Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory::isPath
+     * @covers ::createBundleKey
+     * @covers ::readFile
+     * @covers ::isPath
      */
     public function createBundleKeyTest()
     {
