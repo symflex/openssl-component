@@ -1,7 +1,10 @@
 <?php
-declare(strict_types=1);
 
-namespace Symflex\Component\OpenSSL;
+namespace Symflex\Component\OpenSSL\Contracts;
+
+use Symflex\Component\OpenSSL\Contracts\Key\BundleKey;
+use Symflex\Component\OpenSSL\Contracts\Key\PrivateKey;
+use Symflex\Component\OpenSSL\Contracts\Key\PublicKey;
 
 /**
  * Interface KeyFactory
@@ -26,7 +29,7 @@ interface KeyFactory
      * @param string $publicKey
      * @param string $privateKey
      * @param string $passphrase
-     * @return KeyBundle
+     * @return BundleKey
      */
-    public function createBundleKey(string $publicKey, string $privateKey, string $passphrase): KeyBundle;
+    public function createBundleKey(string $publicKey, string $privateKey, string $passphrase): BundleKey;
 }

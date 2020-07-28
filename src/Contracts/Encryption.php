@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Symflex\Component\OpenSSL;
+namespace Symflex\Component\OpenSSL\Contracts;
 
 /**
  * Interface Encryption
- * @package Symflex\Component\OpenSSL
+ * @package Symflex\Component\OpenSSL\Contracts
  */
 interface Encryption
 {

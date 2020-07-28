@@ -1,11 +1,10 @@
 <?php
-declare(strict_types=1);
 
 namespace Symflex\Component\OpenSSL\Signature;
 
-use Symflex\Component\OpenSSL\PrivateKey;
-use Symflex\Component\OpenSSL\PublicKey;
 use RuntimeException;
+use Symflex\Component\OpenSSL\Contracts\Key\PrivateKey;
+use Symflex\Component\OpenSSL\Contracts\Key\PublicKey;
 use function is_resource;
 use function openssl_pkey_get_public;
 use function openssl_pkey_get_private;

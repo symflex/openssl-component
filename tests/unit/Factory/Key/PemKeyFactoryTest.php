@@ -3,11 +3,11 @@
 namespace Symflex\Component\OpenSSL\Tests\Unit\Factory\Key;
 
 use PHPUnit\Framework\TestCase;
+use Symflex\Component\OpenSSL\Contracts\Key\PrivateKey;
+use Symflex\Component\OpenSSL\Contracts\Key\PublicKey;
 use Symflex\Component\OpenSSL\Factory\Key\PemKeyFactory;
 use Symflex\Component\OpenSSL\Key\PemPrivateKey;
 use Symflex\Component\OpenSSL\Key\PemPublicKey;
-use Symflex\Component\OpenSSL\PrivateKey;
-use Symflex\Component\OpenSSL\PublicKey;
 use Symflex\Component\OpenSSL\Tests\Unit\KeySetUp;
 
 /**

@@ -1,17 +1,16 @@
 <?php
-declare(strict_types=1);
 
 namespace Symflex\Component\OpenSSL\Key;
 
-use Symflex\Component\OpenSSL\PrivateKey;
-use Symflex\Component\OpenSSL\KeyBundle;
-use Symflex\Component\OpenSSL\PublicKey;
+use Symflex\Component\OpenSSL\Contracts\Key\BundleKey;
+use Symflex\Component\OpenSSL\Contracts\Key\PrivateKey;
+use Symflex\Component\OpenSSL\Contracts\Key\PublicKey;
 
 /**
  * Class PemBundleKey
  * @package Symflex\Component\OpenSSL\Key
  */
-class PemBundleKey implements KeyBundle
+class PemBundleKey implements BundleKey
 {
     /**
      * @var PrivateKey|PublicKey

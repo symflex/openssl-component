@@ -1,13 +1,12 @@
 <?php
-declare(strict_types=1);
 
-namespace Symflex\Component\OpenSSL;
+namespace Symflex\Component\OpenSSL\Contracts;
 
 /**
  * Interface PublicKey
- * @package Symflex\Component\OpenSSL
+ * @package Symflex\Component\OpenSSL\Contracts
  */
-interface PublicKey
+interface Key
 {
     /**
      * @return string

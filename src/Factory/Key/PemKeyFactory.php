@@ -1,17 +1,16 @@
 <?php
-declare(strict_types=1);
 
 namespace Symflex\Component\OpenSSL\Factory\Key;
 
+use Symflex\Component\OpenSSL\Contracts\Key\BundleKey;
+use Symflex\Component\OpenSSL\Contracts\Key\PrivateKey;
+use Symflex\Component\OpenSSL\Contracts\Key\PublicKey;
+use Symflex\Component\OpenSSL\Contracts\KeyFactory;
 use Symflex\Component\OpenSSL\Key\PemBundleKey;
 use Symflex\Component\OpenSSL\Key\PemPublicKey;
-use Symflex\Component\OpenSSL\KeyBundle;
-use Symflex\Component\OpenSSL\PrivateKey;
 use Symflex\Component\OpenSSL\Key\PemPrivateKey;
 use SplFileObject;
 use RuntimeException;
-use Symflex\Component\OpenSSL\KeyFactory;
-use Symflex\Component\OpenSSL\PublicKey;
 use Throwable;
 
 /**
@@ -51,9 +50,9 @@ class PemKeyFactory implements KeyFactory
      * @param string $publicKey
      * @param string $privateKey
      * @param string $passphrase
-     * @return KeyBundle
+     * @return BundleKey
      */
-    public function createBundleKey(string $publicKey, string $privateKey, string $passphrase): KeyBundle
+    public function createBundleKey(string $publicKey, string $privateKey, string $passphrase): BundleKey
     {
         return new PemBundleKey($this->createPublicKey($publicKey), $this->createPrivateKey($privateKey, $passphrase));
     }

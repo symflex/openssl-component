@@ -1,9 +1,8 @@
 <?php
-declare(strict_types=1);
 
 namespace Symflex\Component\OpenSSL\Key;
 
-use Symflex\Component\OpenSSL\PublicKey;
+use Symflex\Component\OpenSSL\Contracts\Key\PublicKey;
 
 /**
  * Class PemPrivateKey

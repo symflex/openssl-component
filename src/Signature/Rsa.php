@@ -2,8 +2,7 @@
 
 namespace Symflex\Component\OpenSSL\Signature;
 
-use Symflex\Component\OpenSSL\Signature;
-use Symflex\Component\OpenSSL\Signature\OpenSSL;
+use Symflex\Component\OpenSSL\Contracts\Signature;
 use const OPENSSL_KEYTYPE_RSA;
 
 /**

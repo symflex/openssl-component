@@ -1,10 +1,10 @@
 <?php
 
-namespace Symflex\Component\OpenSSL;
+namespace Symflex\Component\OpenSSL\Contracts;
 
 /**
  * Interface Signature
- * @package Symflex\Component\OpenSSL
+ * @package Symflex\Component\OpenSSL\Contracts
  */
 interface Signature
 {

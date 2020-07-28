@@ -6,7 +6,6 @@ use PHPUnit\Framework\TestCase;
 use Symflex\Component\OpenSSL\Key\PemPrivateKey;
 use Symflex\Component\OpenSSL\Tests\Unit\KeySetUp;
 
-
 /**
  * Class PemPrivateKeyTest
  * @package Symflex\Component\OpenSSL\Tests
